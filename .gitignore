@@ -16,3 +16,6 @@
 *.code-workspace
 .history
 .vscode
+
+# Environments (Let for demo)
+# *_env

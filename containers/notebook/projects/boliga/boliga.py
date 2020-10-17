@@ -2,7 +2,7 @@ from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime
 import numpy as np
 import pandas as pd
-from boliga import Bolig
+from boliga.bolig import Bolig
 
 # Building API to Boliga.dk
 # Requirements:

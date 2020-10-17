@@ -1,2 +1,2 @@
-from bolig import Bolig
-from boliga import BoligaSold, BoligRecent
+from boliga.boliga import BoligaSold, BoligaRecent
+
