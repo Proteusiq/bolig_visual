@@ -23,3 +23,14 @@ services:
       - 5432:5432                
     volumes:
       - ./containers/postgres/sql:/docker-entrypoint-initdb.d
+
+  jupyterlab:
+    container_name: jupyterlab
+    build:
+      context: ./containers/notebook
+    env_file:
+      - ./containers/notebook/notebook.env
+    ports:
+        - 8888:8888
+    volumes:
+        - ./containers/notebook/projects:/notebook
