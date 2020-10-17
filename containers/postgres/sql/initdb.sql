@@ -1,4 +1,4 @@
 CREATE DATABASE boligDB;
 CREATE USER grafanareader WITH PASSWORD 'grafanareaderpwd';
-GRANT USAGE ON SCHEMA schema TO grafanareader;
-GRANT SELECT ON schema.table TO grafanareader;
+GRANT CONNECT ON DATABASE boligDB TO grafanareader;
+GRANT SELECT ON ALL TABLES IN SCHEMA public TO grafanareader;

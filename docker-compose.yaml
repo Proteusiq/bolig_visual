@@ -16,6 +16,7 @@ services:
   
   postgres:
     image: postgres
+    container_name: postgres
     env_file:
       - ./containers/postgres/postgres.env
     ports:
