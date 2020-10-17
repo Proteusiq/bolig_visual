@@ -1,0 +1,24 @@
+version: '3.1'
+
+services:
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    ports:
+      - 3000:3000
+    links:
+      - postgres
+    env_file:
+      - ./containers/grafana/config.monitoring
+    volumes:
+      - ./containers/grafana/dashboard:/etc/extra-config/grafana
+    command: ./etc/extra-config/grafana/post.sh
+  
+  postgres:
+    image: postgres
+    env_file:
+      - ./containers/postgres/postgres.env
+    ports:
+      - 5432:5432                
+    volumes:
+      - ./containers/postgres/sql:/docker-entrypoint-initdb.d
