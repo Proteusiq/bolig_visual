@@ -34,3 +34,25 @@ services:
         - 8888:8888
     volumes:
         - ./containers/notebook/projects:/notebook
+
+  influxdb:
+    container_name: influxdb
+    image: influxdb:latest
+    ports:
+      - 8086:8086
+    volumes:
+      - ./containers/influxdb/data:/var/lib/influxdb
+    env_file:
+      - ./containers/influxdb/influxdb.env
+      
+  chronograf:
+    container_name: chronograf
+    image: chronograf:latest
+    ports:
+      - 8890:8888
+    volumes:
+      - ./containers/chronograf/data:/var/lib/chronograf
+    depends_on:
+      - influxdb
+    env_file:
+      - ./containers/influxdb/influxdb.env

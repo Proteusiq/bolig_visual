@@ -19,3 +19,5 @@
 
 # Environments (Let for demo)
 # *_env
+containers/influxdb/data/*
+containers/chronograf/data/*
